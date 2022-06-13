@@ -1,0 +1,626 @@
+{
+	"info": {
+		"_postman_id": "1106389e-a2ec-461e-bb4b-022bdbd04134",
+		"name": "Qutubuku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8335309"
+	},
+	"item": [
+		{
+			"name": "Authentications",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"if (jsonData.data) {",
+									"    postman.setEnvironmentVariable(\"token\", jsonData.data.token);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "zulkarnain.ahmad18@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/user/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Zulkarnain",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "zulkarnain.ahmad18@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Jl. Dihatimu",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "085765627679",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/user/register",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/user/OQqMnd566W5Wzmm08hw0",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"OQqMnd566W5Wzmm08hw0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiYXNkYXNkbmFrQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoienhmd2Vhc2RhIn0sImlhdCI6MTY1NDk1NzQ0NCwiZXhwIjoxNjU1MDQzODQ0fQ.HbufZfm98bQOtShLH5CEq4vYkQRl_dj_YiXSb-QR8nI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/api/user",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/user/me",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/user/HsSGEJzS342NmyP5ie1m",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"HsSGEJzS342NmyP5ie1m"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Zulkarnain",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "gender",
+									"value": "",
+									"description": "0 = Memilih tidak menyebutkan, 1 = laki laki, 2 = perempuan",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "mobile",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/user/7eEZkqPmX85X0oxc23QI",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"7eEZkqPmX85X0oxc23QI"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Add product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Gula",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "0.5",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "3000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/product/add",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/product",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/product/2xDwu63s0GWpmVrInmaB",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"2xDwu63s0GWpmVrInmaB"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Bearbrand - 250ml",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "stock",
+									"value": "1000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/product/2xDwu63s0GWpmVrInmaB",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"2xDwu63s0GWpmVrInmaB"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/product/apP0nU7lHn4oMaFlwhTt",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"apP0nU7lHn4oMaFlwhTt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/product?search=bear",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"product"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "bear"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carts",
+			"item": [
+				{
+					"name": "Get Carts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/cart/all",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"cart",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/cart/LB2iFSMx0gSbWiu7QCZZ",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"cart",
+								"LB2iFSMx0gSbWiu7QCZZ"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cart By User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/cart",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "product_id",
+									"value": "2xDwu63s0GWpmVrInmaB",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "50",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/cart",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "quantity",
+									"value": "50",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/cart/LB2iFSMx0gSbWiu7QCZZ",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"cart",
+								"LB2iFSMx0gSbWiu7QCZZ"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/cart/rz924ehOpZTxWbnJ6tiz",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"cart",
+								"rz924ehOpZTxWbnJ6tiz"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Get Orders",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invoices",
+			"item": [
+				{
+					"name": "Get Invoices",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
